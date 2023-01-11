@@ -1,2 +1,11 @@
-<h1>Public::Lists#show</h1>
-<p>Find me in app/views/public/lists/show.html.erb</p>
+<div>list 詳細</div>
+<div>
+  <%#= image_tag list_image.get_image %>
+  <%#= image_tag ' ' %>
+</div>
+<div>
+  <p>目標<%= @list.goal %></p>
+  <p>関連付け<%= @list.relation %></p>
+  <p>タスク<%#= @list.task %></p>
+  <p>ルーティン<%= @list.routine %></p>
+</div>
