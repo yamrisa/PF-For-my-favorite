@@ -1,5 +1,22 @@
 Rails.application.routes.draw do
   
+  namespace :public do
+    get 'outputs/new'
+    get 'outputs/create'
+    get 'outputs/index'
+    get 'outputs/show'
+    get 'outputs/edit'
+    get 'outputs/update'
+    get 'outputs/destroy'
+  end
+  namespace :public do
+    get 'lists/new'
+    get 'lists/index'
+    get 'lists/show'
+    get 'lists/edit'
+    get 'lists/update'
+    get 'lists/destroy'
+  end
 # 管理者用
 # URL /admin/sign_in ...
 devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
