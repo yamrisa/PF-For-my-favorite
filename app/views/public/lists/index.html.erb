@@ -1,7 +1,6 @@
 <% @lists.each do |list| %>
   <div>
-    <%#= image_tag list_image.get_image %>
-    <%#= image_tag ' ' %>
+    <%#= image_tag list.image, get_list_image(400,300) %>
   </div>
   <div>
     <%= link_to list_path(list.id) do %>

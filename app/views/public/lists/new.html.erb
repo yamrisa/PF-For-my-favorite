@@ -1,7 +1,7 @@
 <h1>Listの作成</h1>
   <%= form_with model: @list do |f| %>
     <h4>１番愛おしい推しの画像は？</h4>
-      <%#= f.file_field :image, accept: "image/*" %>
+      <%= f.file_field :image, accept: "image/*" %>
     <h4>目標を入力してください</h4>
       <%= f.text_field :goal %>
     <h4>目標達成後、自分と推しにどんな良い事が還元されるか書き出してみよう！</h4>
