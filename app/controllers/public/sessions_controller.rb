@@ -35,4 +35,11 @@ class Public::SessionsController < Devise::SessionsController
     about_path
   end
   
+  #ゲストログイン機能と遷移先
+  def guest_sign_in
+    user = User.guest
+    sign_in user
+    redirect_to new_list_path, notice: 'guestuserでログインしました。'
+  end
+  
 end

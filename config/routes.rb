@@ -13,10 +13,14 @@ devise_for :users,skip: [:passwords], controllers: {
   sessions: 'public/sessions'
 }
 
+devise_scope :user do
+  post 'users/guest_sign_in', to: 'public/sessions#guest_sign_in'
+end
+
 scope module: :public do
-    root to: 'homes#top'
-    get 'about' => 'homes#about', as: 'about'
-    resources :lists
+  root to: 'homes#top'
+  get 'about' => 'homes#about', as: 'about'
+  resources :lists
 end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
