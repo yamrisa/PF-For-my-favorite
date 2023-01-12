@@ -1,2 +1,22 @@
-<h1>Public::Outputs#index</h1>
-<p>Find me in app/views/public/outputs/index.html.erb</p>
+<h1>アウトプット投稿</h1>
+  <%= form_with model: @output do |f| %>
+    <h4>画像</h4>
+      <%#= f.file_field :image, accept: "image/*" %>
+    <h4>投稿文</h4>
+      <%= f.text_area :post %>
+    <h4>タグ</h4>
+      <%#= f.text_area :task_name %>
+    <%= f.submit '投稿' %>
+  <% end %>
+  
+<h1>アウトプット投稿</h1>
+<% @outputs.each do |output| %>
+<div>
+  <%#= image_tag list_image.get_image %>
+  <%#= image_tag ' ' %>
+</div>
+<div>
+  <p>投稿文<%= output.post %></p>
+  <p>タグ<%#= tag.name %></p>
+</div>
+<% end %>

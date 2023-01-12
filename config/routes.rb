@@ -18,6 +18,7 @@ devise_for :users,skip: [:passwords], controllers: {
   sessions: 'public/sessions'
 }
 
+#ゲストログイン
 devise_scope :user do
   post 'users/guest_sign_in', to: 'public/sessions#guest_sign_in'
 end
@@ -25,8 +26,9 @@ end
 scope module: :public do
   root to: 'homes#top'
   get 'about' => 'homes#about', as: 'about'
-  resources :user, only: [:show, :edit, :update]
+  resources :users, only: [:show, :edit, :update]
   resources :lists
+  resources :outputs
 end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
