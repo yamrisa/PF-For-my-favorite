@@ -40,6 +40,6 @@ class Public::ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:goal, :relation, :routine)
+    params.require(:list).permit(:user_id, :goal, :relation, :routine)
   end
 end

@@ -15,6 +15,9 @@
       <% if user_signed_in? %>
       <li>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        <%#= link_to 'マイページ', user_path(current_user.id) %>
+        <%= link_to 'リスト登録', new_list_path %>
+        <%= link_to 'リスト一覧', lists_path %>
       </li>
     <% else %>
       <li>
