@@ -1,2 +1,15 @@
-<h1>Public::Lists#edit</h1>
-<p>Find me in app/views/public/lists/edit.html.erb</p>
+<h1>Listの編集</h1>
+  <%= form_with model: @list do |f| %>
+    <h4>１番愛おしい推しの画像は？</h4>
+      <%#= f.file_field :image, accept: "image/*" %>
+    <h4>目標を入力してください</h4>
+      <%= f.text_field :goal %>
+    <h4>目標達成後、自分と推しにどんな良い事が還元されるか書き出してみよう！</h4>
+      <%= f.text_area :relation %>
+    <h4>毎日続けられるタスクを書こう！</h4>
+      <%#= f.text_area :task_name %>
+    <h4>タスクをやる前のルーティンを決めよう！</h4>
+      <%= f.text_area :routine %>
+    <%= f.submit '更新' %>
+  <% end %>
+  <%= link_to '戻る', list_path %>
