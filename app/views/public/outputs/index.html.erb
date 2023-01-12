@@ -9,14 +9,17 @@
     <%= f.submit '投稿' %>
   <% end %>
   
-<h1>アウトプット投稿</h1>
+<h1>投稿一覧</h1>
 <% @outputs.each do |output| %>
 <div>
+  <p>画像</p>
   <%#= image_tag list_image.get_image %>
   <%#= image_tag ' ' %>
 </div>
 <div>
-  <p>投稿文<%= output.post %></p>
+  <%= link_to output_path(output.id) do %>
+    <p>投稿<%= output.post %></p>
+  <% end %>
   <p>タグ<%#= tag.name %></p>
 </div>
 <% end %>

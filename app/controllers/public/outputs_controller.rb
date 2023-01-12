@@ -16,15 +16,23 @@ class Public::OutputsController < ApplicationController
 
 
   def show
+    @output = Output.find(params[:id]) 
   end
 
   def edit
+    @output = Output.find(params[:id]) 
   end
 
   def update
+    @output = Output.find(params[:id])
+    @output.update(output_params)
+    redirect_to output_path(@output.id)
   end
 
   def destroy
+    @output = Output.find(params[:id])
+    @output.destroy
+    redirect_to outputs_path
   end
   
   private

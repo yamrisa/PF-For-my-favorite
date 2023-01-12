@@ -1,2 +1,12 @@
-<h1>Public::Outputs#edit</h1>
-<p>Find me in app/views/public/outputs/edit.html.erb</p>
+<h1>編集</h1>
+<%= form_with model: @output do |f| %>
+  <h4>画像</h4>
+    <%#= f.file_field :image, accept: "image/*" %>
+  <h4>投稿文</h4>
+    <%= f.text_area :post %>
+  <h4>タグ</h4>
+    <%#= f.text_area :task_name %>
+  <%= f.submit '更新' %>
+<% end %>
+
+<%= link_to '戻る', output_path %>

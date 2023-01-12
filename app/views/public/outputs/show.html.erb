@@ -1,2 +1,15 @@
-<h1>Public::Outputs#show</h1>
-<p>Find me in app/views/public/outputs/show.html.erb</p>
+<div>詳細</div>
+
+<div>
+  <p>画像</p>
+  <%#= image_tag list_image.get_image %>
+  <%#= image_tag ' ' %>
+</div>
+<div>
+  <p>投稿<%= @output.post %></p>
+  <p>タグ<%#= @list.task %></p>
+</div>
+
+<%= link_to '戻る', outputs_path %>
+<%= link_to '編集', edit_output_path %>
+<%= link_to '削除', output_path, method: :delete %>

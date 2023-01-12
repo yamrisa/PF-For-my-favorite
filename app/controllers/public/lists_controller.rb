@@ -4,7 +4,7 @@ class Public::ListsController < ApplicationController
     @list = List.new
   end
   
-  # 投稿データの保存
+  #投稿データの保存
   def create
     @list = List.new(list_params)
     @list.user_id = current_user.id
@@ -12,8 +12,9 @@ class Public::ListsController < ApplicationController
     redirect_to lists_path
   end
 
+  #ログイン中ユーザーのリスト一覧表示
   def index
-    @lists = List.all
+    @lists = List.where(user_id: current_user.id)
   end
 
   def show
