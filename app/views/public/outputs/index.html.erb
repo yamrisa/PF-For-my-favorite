@@ -1,7 +1,5 @@
 <h1>アウトプット投稿</h1>
   <%= form_with model: @output do |f| %>
-    <h4>画像</h4>
-      <%#= f.file_field :image, accept: "image/*" %>
     <h4>投稿文</h4>
       <%= f.text_area :post %>
     <h4>タグ</h4>
@@ -11,11 +9,6 @@
   
 <h1>投稿一覧</h1>
 <% @outputs.each do |output| %>
-<div>
-  <p>画像</p>
-  <%#= image_tag list_image.get_image %>
-  <%#= image_tag ' ' %>
-</div>
 <div>
   <%= link_to output_path(output.id) do %>
     <p>投稿<%= output.post %></p>
