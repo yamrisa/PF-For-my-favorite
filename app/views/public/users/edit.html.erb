@@ -1,2 +1,11 @@
-<h1>Public::Users#edit</h1>
-<p>Find me in app/views/public/users/edit.html.erb</p>
+<h1>編集</h1>
+
+<%= form_with model: @user, url: my_page_update_path(@user.id) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+  <%= f.submit "保存" %>
+<% end %>
+
+<%= link_to '戻る', information_path %>

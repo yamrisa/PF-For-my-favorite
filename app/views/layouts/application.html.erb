@@ -12,19 +12,22 @@
 
   <body>
     <header>
+      <%# userがログインしてる時 %>
       <% if user_signed_in? %>
       <li>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-        <%#= link_to 'マイページ', user_path(current_user.id) %>
+        <%= link_to "マイページ", my_page_path %>
         <%= link_to 'リスト登録', new_list_path %>
         <%= link_to 'リスト一覧', lists_path %>
         <%= link_to 'アウトプット', outputs_path %>
       </li>
-    <% else %>
+      <%# adminがログインしてる時 %>
+      <%# elsif admin_signed_in? %>
+      <%# userとadminがログインしてない時 %>
+      <% else %>
       <li>
         <%= link_to "新規登録", new_user_registration_path %>
-      </li>
-      <li>
+        <%= link_to "top", root_path %>
         <%= link_to "ログイン", new_user_session_path %>
       </li>
     <% end %>

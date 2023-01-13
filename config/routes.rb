@@ -26,7 +26,11 @@ end
 scope module: :public do
   root to: 'homes#top'
   get 'about' => 'homes#about', as: 'about'
-  resources :users, only: [:show, :edit, :update]
+  
+  get 'public/my_page' => 'users#show', as: 'my_page'
+  get 'public/information' => 'users#edit', as: 'information'
+  patch 'public/update' => 'users#update', as: 'my_page_update'
+  
   resources :lists
   resources :outputs
 end
