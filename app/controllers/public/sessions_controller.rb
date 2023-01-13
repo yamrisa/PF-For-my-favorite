@@ -25,17 +25,17 @@ class Public::SessionsController < Devise::SessionsController
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
   
-  #サインイン後の遷移先
+  # サインイン後の遷移先
   def after_sign_in_path_for(resource)
     lists_path
   end
   
-  #ログアウト後の遷移先
+  # ログアウト後の遷移先
   def after_sign_out_path_for(resource)
     about_path
   end
   
-  #ゲストログイン機能と遷移先
+  # ゲストログイン機能と遷移先
   def guest_sign_in
     user = User.guest
     sign_in user

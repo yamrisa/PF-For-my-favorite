@@ -1,10 +1,10 @@
 class Public::ListsController < ApplicationController
-  #空のオブジェクト作成
+  # 空のオブジェクト作成
   def new
     @list = List.new
   end
   
-  #投稿データの保存
+  # 投稿データの保存
   def create
     @list = List.new(list_params)
     @list.user_id = current_user.id
@@ -12,7 +12,7 @@ class Public::ListsController < ApplicationController
     redirect_to lists_path
   end
 
-  #ログイン中ユーザーのリスト一覧表示
+  # ログイン中ユーザーのリスト一覧表示
   def index
     @lists = List.where(user_id: current_user.id)
   end

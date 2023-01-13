@@ -12,7 +12,7 @@
 
   <body>
     <header>
-      <%# userがログインしてる時 %>
+      <!--userがログインしてる場合-->
       <% if user_signed_in? %>
       <li>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
@@ -21,9 +21,9 @@
         <%= link_to 'リスト一覧', lists_path %>
         <%= link_to 'アウトプット', outputs_path %>
       </li>
-      <%# adminがログインしてる時 %>
+      <!--adminがログインしてる場合-->
       <%# elsif admin_signed_in? %>
-      <%# userとadminがログインしてない時 %>
+      <!--user/adminがログインしてない場合-->
       <% else %>
       <li>
         <%= link_to "新規登録", new_user_registration_path %>

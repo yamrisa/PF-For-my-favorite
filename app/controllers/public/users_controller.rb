@@ -13,7 +13,7 @@ class Public::UsersController < ApplicationController
     redirect_to my_page_path
   end
   
-  #ストロングパラメータ
+  # ストロングパラメータ
   private
 
   def user_params
