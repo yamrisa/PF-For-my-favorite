@@ -1,4 +1,7 @@
 class Public::UsersController < ApplicationController
+  # editアクション実行前にensure_guest_userを実行
+  before_action :ensure_guest_user, only: [:edit]
+  
   def show
     @user = current_user
   end
@@ -19,5 +22,13 @@ class Public::UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password)
   end
+  
+  # user編集画面のURLを直接入力された場合メッセージを表示してuser詳細画面へリダイレクト
+  def ensure_guest_user
+    @user = User.find(params[:id])
+    if @user.name == "guestuser"
+      redirect_to user_path(current_user) , notice: 'ゲストユーザーはプロフィール編集画面へ遷移できません。'
+    end
+  end  
 
 end

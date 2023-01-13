@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
- 
+# 自動生成されるこれ消していいか聞く
   namespace :public do
     get 'users/show'
     get 'users/edit'
