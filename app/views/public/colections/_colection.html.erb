@@ -1,0 +1,13 @@
+<% if output.colectioned_by?(current_user) %>
+    <p>
+      <%= link_to output_colection_path(output.id), method: :delete, remote: true do %>
+        ★
+      <% end %>
+    </p>
+  <% else %>
+    <p>
+      <%= link_to output_colection_path(output.id), method: :post, remote: true do %>
+        ☆
+      <% end %>
+    </p>
+  <% end %>

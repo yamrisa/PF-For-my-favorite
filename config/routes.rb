@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :public do
+    get 'colections/colection'
+    get 'colections/uncolection'
+  end
 # 自動生成されるこれ消していいか聞く
   namespace :public do
     get 'users/show'
@@ -32,7 +36,10 @@ scope module: :public do
   patch 'public/update' => 'users#update', as: 'my_page_update'
   
   resources :lists
-  resources :outputs
+  resources :outputs do
+    resource :colection, only: [:create, :destroy]
+  end
+  
 end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
