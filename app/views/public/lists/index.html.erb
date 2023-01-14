@@ -2,12 +2,10 @@
   <div>
     <%= image_tag list.get_image(400,300) %>
   </div>
+  
   <div>
     <%= link_to list_path(list.id) do %>
       <p><%= list.goal %></p>
     <% end %>
-    <p>関連付け<%= list.relation %></p>
-    <p>タスク<%#= list.task %></p>
-    <p>ルーティン<%= list.routine %></p>
   </div>
 <% end %>

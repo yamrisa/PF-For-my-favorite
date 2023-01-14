@@ -5,6 +5,6 @@
 <%= @user.email %>
 
 <!--user nameがguestじゃない場合表示-->
-<% if @user.name != "guestuser" %>
+<% if @user.name != "Guest player" %>
   <%= link_to '編集', information_path %>
 <% end %>
