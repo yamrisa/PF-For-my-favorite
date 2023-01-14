@@ -19,11 +19,7 @@
         <%= link_to 'リスト登録', new_list_path %>
         <%= link_to 'リスト一覧', lists_path %>
         <%= link_to 'アウトプット', outputs_path %>
-        <!--user nameがguestじゃない場合表示-->
-        <!--押下するとエラーがでる、userコントローラのメソッドのIDないって-->
-        <% if @user != "guestuser" %>
-          <%= link_to "マイページ", my_page_path %>
-        <% end %>
+        <%= link_to "マイページ", my_page_path %>
       </li>
       <!--adminがログインしてる場合表示-->
       <%# elsif admin_signed_in? %>
