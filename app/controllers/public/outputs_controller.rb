@@ -9,6 +9,7 @@ class Public::OutputsController < ApplicationController
   
   def create
     @output = Output.new(output_params)
+    # userとのアソシエーションできてない？ER図おかしいかも
     #@output.user_id = current_user.id
     @output.save
     redirect_to outputs_path

@@ -1,7 +1,7 @@
 <div>list 詳細</div>
 
 <div>
-  <%#= image_tag list_image.get_image %>
+  <%= image_tag @list.get_image(400,300) %>
 </div>
 <div>
   <p>目標<%= @list.goal %></p>
