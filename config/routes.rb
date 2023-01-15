@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    get 'home/top'
+  end
   namespace :public do
     get 'colections/colection'
     get 'colections/uncolection'

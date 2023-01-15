@@ -25,7 +25,7 @@ class Public::UsersController < ApplicationController
   
   # user編集画面のURLを直接入力された場合メッセージを表示してuser詳細画面へリダイレクト
   def ensure_guest_user
-    @user = User.find(params[:id])
+    @user = current_user
     if @user.name == "Guest player"
       redirect_to user_path(current_user) , notice: 'ゲストプレイヤーはプロフィール編集画面へ遷移できません。'
     end
