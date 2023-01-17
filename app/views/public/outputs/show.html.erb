@@ -5,5 +5,9 @@
 </div>
 
 <%= link_to '戻る', outputs_path %>
-<%= link_to '編集', edit_output_path %>
-<%= link_to '削除', output_path, method: :delete %>
+<!--投稿したuserのみ表示-->
+<% if @output.id == current_user.id %>
+  <%= link_to '編集', edit_output_path %>
+  <%= link_to '削除', output_path, method: :delete %>
+
+<% end %>

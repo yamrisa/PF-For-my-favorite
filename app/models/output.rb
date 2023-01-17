@@ -1,4 +1,6 @@
 class Output < ApplicationRecord
+  
+  
   has_many :taggings, dependent: :destroy
   has_many :tags, dependent: :destroy
   has_many :colections, dependent: :destroy
