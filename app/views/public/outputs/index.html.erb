@@ -9,8 +9,8 @@
   
 <h1>投稿一覧</h1>
 <% @outputs.each do |output| %>
-<div id="colections_buttons_<%= @output.id %>">
-  <%#= render 'public/colections/colection', output: @output %>
+<div id="colections_buttons_<%= output.id %>">
+  <%= render 'public/colections/colection', output: output %>
 </div>
 <div>
   <%= link_to output_path(output.id) do %>
