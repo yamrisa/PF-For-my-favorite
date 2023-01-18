@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 2023_01_12_105129) do
     t.integer "user_id", null: false
     t.string "goal", null: false
     t.text "relation", null: false
+    t.text "task", null: false
     t.text "routine", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

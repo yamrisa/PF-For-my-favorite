@@ -2,16 +2,8 @@ Rails.application.routes.draw do
   namespace :admin do
     get 'home/top'
   end
-  namespace :public do
-    get 'colections/colection'
-    get 'colections/uncolection'
-  end
 # 自動生成されるこれ消していいか聞く
-  namespace :public do
-    get 'users/show'
-    get 'users/edit'
-    get 'users/update'
-  end
+
 # 管理者用
 # URL /admin/sign_in ...
 devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
