@@ -1,16 +1,16 @@
 class Public::OutputsController < ApplicationController
 
+  # 新規投稿とログイン中ユーザーの投稿のみ表示
   def index
     @user = current_user
     @output = Output.new
-    @outputs = Output.all
-    
+    @outputs = Output.where(user_id: current_user.id)
   end
   
   def create
     @output = Output.new(output_params)
     @output.user_id = current_user.id
-    @output.save!
+    @output.save! 
     redirect_to outputs_path
   end
 
@@ -38,7 +38,7 @@ class Public::OutputsController < ApplicationController
   private
 
   def output_params
-    params.require(:output).permit(:user_id, :post,)
+    params.require(:output).permit(:user_id, :post, :release)
   end
   
 end

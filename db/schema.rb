@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 2023_01_12_105129) do
   create_table "outputs", force: :cascade do |t|
     t.integer "user_id", null: false
     t.text "post", null: false
+    t.string "release", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

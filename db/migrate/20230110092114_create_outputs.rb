@@ -3,6 +3,7 @@ class CreateOutputs < ActiveRecord::Migration[6.1]
     create_table :outputs do |t|
       t.integer :user_id, null: false
       t.text :post, null: false
+      t.string :release, null: false
       t.timestamps
     end
   end
