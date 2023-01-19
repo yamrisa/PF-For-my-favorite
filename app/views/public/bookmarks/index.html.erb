@@ -1,0 +1,16 @@
+<h1>Bookmarks#index</h1>
+
+<% @bookmarks.each do |bookmark| %>
+<div>
+  <%= bookmark.post %><br>
+</div>
+
+<%
+=begin %> いいね機能つけるとテンプレートファイル読み込めない
+<div id="colections_buttons_<%= @output %>">
+  <%= render 'public/colections/colection', bookmark: bookmark %>
+</div>
+<%
+=end %>
+
+<% end %>

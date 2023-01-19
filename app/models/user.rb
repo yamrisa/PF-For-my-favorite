@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :outputs, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_many :colections, dependent: :destroy
+  has_many :colection_outputs, through: :colections, source: :output , dependent: :destroy
+  
   
   #ゲストログイン内のメソッド
   def self.guest
