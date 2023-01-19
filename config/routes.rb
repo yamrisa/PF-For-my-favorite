@@ -35,11 +35,7 @@ scope module: :public do
   resources :outputs do
     resource :colection, only: [:create, :destroy]
   end
-  resources :timeline, only: [:index] do
-    member do
-    get "search"
-    end
-  end
+  resources :timeline, only: [:index]
 
     
   

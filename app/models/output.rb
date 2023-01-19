@@ -16,7 +16,7 @@ class Output < ApplicationRecord
     if search != ""
       Output.where('post LIKE(?)', "%#{search}%")
     else
-      Output.all
+      Output.all.where(release: 'release')
     end
   end
   
