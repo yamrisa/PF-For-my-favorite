@@ -1,7 +1,9 @@
 <%= form_with(url: timeline_index_path(@outputs_post), remote: true, method: :get, class: "output-search-form") do |form| %>
-  <%= form.text_field :keyword, placeholder: "投稿検索する", class: "search-input" %>
+  <%= form.text_field :keyword, placeholder: "search", class: "search-input" %>
   <%= form.submit "検索", class: "search-btn" %>
 <% end %>
+
+<p><%=link_to"bookmark", bookmarks_path(@user) %></p>
 
 <% @outputs.each do |output| %>
 <div>
