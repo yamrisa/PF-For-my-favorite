@@ -11,4 +11,13 @@ class Output < ApplicationRecord
     colections.where(user_id: user.id).exists?
   end
   
+  # outputモデルから検索するメソッド
+  def self.search(search)
+    if search != ""
+      Output.where('post LIKE(?)', "%#{search}%")
+    else
+      Output.all
+    end
+  end
+  
 end
