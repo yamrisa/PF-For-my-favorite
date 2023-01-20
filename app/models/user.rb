@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :colections, dependent: :destroy
   has_many :colection_outputs, through: :colections, source: :output , dependent: :destroy
-  
+  has_many :events, dependent: :destroy
   
   #ゲストログイン内のメソッド
   def self.guest

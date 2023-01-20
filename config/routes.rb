@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   
- 
   namespace :admin do
     get 'home/top'
   end
@@ -37,8 +36,8 @@ scope module: :public do
     resource :colection, only: [:create, :destroy]
   end
   resources :bookmarks, only: [:index]
-  
   resources :timeline, only: [:index]
+  resources :events
   
 
     

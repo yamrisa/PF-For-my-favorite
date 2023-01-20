@@ -66,3 +66,5 @@ gem "net-imap"
 
 gem 'devise'
 gem 'jquery-rails'
+
+gem 'simple_calendar', '~> 2.0'
