@@ -12,50 +12,56 @@
   </head>
 
   <body>
-    <header class="sticky-top">
-      <div class="dropdown">
-       <button type="button" class="btn btn-light  dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-         MENU
-        </button>
-        <ul class="dropdown-menu">
-          <!--userがログインしてる場合表示-->
-          <% if user_signed_in? %>
-            <li class="dropdow-item">
-              <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-            </li>
-            <li class="dropdow-item">
-              <%= link_to "My page", my_page_path %>
-            </li>
-            <li class="dropdow-item">
-              <%= link_to 'My calendar', events_path %>
-            </li>
-            <li class="dropdow-item">
-              <%= link_to 'My List', lists_path %>
-            </li>
-            <li class="dropdow-item">
-              <%= link_to '＋List', new_list_path %>
-            </li>
-            <li class="dropdow-item">
-              <%= link_to 'My output', outputs_path %>
-            </li>
-            <li class="dropdow-item">
-              <%= link_to 'Output', timeline_index_path %>
-            </li>
-          <!--user/adminがログインしてない場合表示-->
-          <% else %>
-            <li class="dropdow-item">
-              <%= link_to "Sign up", new_user_registration_path %>
-            </li>
-            <li class="dropdow-item">
-              <%= link_to "Top", root_path %>
-            </li>
-            <li class="dropdow-item">
-              <%= link_to "Log in", new_user_session_path %>
-            </li>
-        <% end %>
-        </ul>
+    <div class="container-fluid">
+      <div class="row">
+        <header class="sticky-top placeholder-glow">
+          <span class="placeholder col-12 bg-primary">
+          <div class="dropdown">
+            <button type="button" class="btn btn-light  dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+               MENU
+            </button>
+            <ul class="dropdown-menu">
+              <!--userがログインしてる場合表示-->
+              <% if user_signed_in? %>
+                <li class="dropdow-item">
+                  <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+                </li>
+                <li class="dropdow-item">
+                  <%= link_to "My page", my_page_path %>
+                </li>
+                <li class="dropdow-item">
+                  <%= link_to 'My calendar', events_path %>
+                </li>
+                <li class="dropdow-item">
+                  <%= link_to 'My List', lists_path %>
+                </li>
+                <li class="dropdow-item">
+                  <%= link_to '＋List', new_list_path %>
+                </li>
+                <li class="dropdow-item">
+                  <%= link_to 'My output', outputs_path %>
+                </li>
+                <li class="dropdow-item">
+                  <%= link_to 'Output', timeline_index_path %>
+                </li>
+              <!--user/adminがログインしてない場合表示-->
+              <% else %>
+                <li class="dropdow-item">
+                  <%= link_to "Sign up", new_user_registration_path %>
+                </li>
+                <li class="dropdow-item">
+                  <%= link_to "Top", root_path %>
+                </li>
+                <li class="dropdow-item">
+                  <%= link_to "Log in", new_user_session_path %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </header>
+        </span>
       </div>
-    </header>
-    <%= yield %>
+      <%= yield %>
+    </div>
   </body>
 </html>
