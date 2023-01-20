@@ -2,13 +2,27 @@
   <%= form_with model: @list do |f| %>
     <h4>１番愛おしい推しの画像は？</h4>
       <%= f.file_field :image, accept: "image/*" %>
-    <h4>目標を入力してください</h4>
-      <%= f.text_field :goal %>
-    <h4>目標達成後、自分と推しにどんな良い事が還元されるか書き出してみよう！</h4>
-      <%= f.text_area :relation %>
-    <h4>毎日続けられるタスクを書こう！</h4>
-      <%= f.text_area :task %>
-    <h4>タスクをやる前のルーティンを決めよう！</h4>
-      <%= f.text_area :routine %>
+    <div class="form-floating mb-3">
+      <input type="list_goal" class="form-control" id="floatingInput" placeholder="oooできるようになる！">
+      <label for="floatingInput">★目標を設定しよう！</label>
+      <%#= f.text_field :goal %>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="list_relation" class="form-control" id="floatingInput" placeholder="推しのoooに貢献できる！">
+      <label for="floatingInput">★目標達成は推しにどんな良い影響を与えらそう？</label>
+      <%#= f.text_area :relation %>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="list_task" class="form-control" id="floatingInput" placeholder="oooをする！">
+      <label for="floatingInput">★毎日続けられるタスクを書こう！</label>
+      <%#= f.text_area :task %>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="list_routine" class="form-control" id="floatingInput" placeholder="oooをする！">
+      <label for="floatingInput">★タスクをやる前のルーティンを決めよう！</label>
+      <%#= f.text_area :routine %>
+    </div>
     <%= f.submit '登録' %>
   <% end %>
+  
+  <!--form_withとフローティングラベルの組み合わせ方分からない-->
