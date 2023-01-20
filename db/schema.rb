@@ -88,7 +88,11 @@ ActiveRecord::Schema.define(version: 2023_01_20_043442) do
   create_table "reviews", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "output_id", null: false
-    t.integer "rate", null: false
+    t.float "all_rating", default: 0.0, null: false
+    t.float "rating1", default: 0.0, null: false
+    t.float "rating2", default: 0.0, null: false
+    t.float "rating3", default: 0.0, null: false
+    t.float "rating4", default: 0.0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
