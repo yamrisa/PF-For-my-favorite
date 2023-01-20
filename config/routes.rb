@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   
   namespace :admin do
     get 'home/top'
+    delete 'home/destroy'
   end
-# 自動生成されるこれ消していいか聞く
 
 # 管理者用
 # URL /admin/sign_in ...
