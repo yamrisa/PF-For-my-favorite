@@ -1,16 +1,17 @@
 <h1>Bookmark</h1>
 
-<% @bookmarks.each do |bookmark| %>
-<div>
-  <%= bookmark.post %><br>
+<div class="row">
+  <% @like_outputs .each do |bookmark| %>
+    <div class="col-8">
+      <div class="p-3 m-3 bg-info bg-opacity-10 border border-info border-3 rounded-start rounded-end">
+        <%= bookmark.post %>
+  
+
+<div id="colections_buttons_<%= bookmark %>">
+  <%= render 'public/colections/colection', output: bookmark %>
 </div>
 
-<%
-=begin %> いいね機能つけるとテンプレートファイル読み込めない
-<div id="colections_buttons_<%= @output %>">
-  <%= render 'public/colections/colection', bookmark: bookmark %>
+      </div>
+    </div>
+  <% end %>
 </div>
-<%
-=end %>
-
-<% end %>

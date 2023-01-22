@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   namespace :admin do
     get 'home/top'
-    delete 'home/destroy'
+    resources :outputs, only: [:destroy]
   end
 
 # 管理者用

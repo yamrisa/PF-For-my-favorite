@@ -1,5 +1,7 @@
 class Public::BookmarksController < ApplicationController
   def index
-    @bookmarks = current_user.colection_outputs
+    @bookmarks = Output.where(user_id: current_user.id)
+    @colections = Colection.where(user_id: current_user.id).pluck(:output_id)
+    @like_outputs = Output.find(@colections)
   end
 end
