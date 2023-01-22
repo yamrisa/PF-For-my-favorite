@@ -1,2 +1,11 @@
 @import "bootstrap";
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+@font-face {
+  font-family: "RampartOne";
+  src: url('../fonts/RampartOne-Regular.ttf');
+}
+
+body {
+  font-family: "RampartOne"
+}
