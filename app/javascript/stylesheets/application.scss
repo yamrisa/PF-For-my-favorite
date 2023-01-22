@@ -1,11 +1,14 @@
 @import "bootstrap";
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 
+//フォントの変更 
 @font-face {
   font-family: "RampartOne";
   src: url('../fonts/RampartOne-Regular.ttf');
 }
 
 body {
-  font-family: "RampartOne"
+  font-family: "RampartOne";
+  background: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%);
+  border: double 5px #4ec4d3;
 }
