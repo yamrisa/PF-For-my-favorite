@@ -1,18 +1,21 @@
-<div>list 詳細</div>
 
+<%= link_to 'Back', lists_path %>
 <div>
   <%= image_tag @list.get_image(400,300) %>
 </div>
 <div>
-  <p>目標<%= @list.goal %></p>
-  <p>関連付け<%= @list.relation %></p>
-  <p>タスク<%= @list.task %></p>
-  <p>ルーティン<%= @list.routine %></p>
+  <details class="accordion-006">
+    <summary><%= @list.goal %></summary>
+    <p>  <p>目標：<%= @list.goal %></p>
+    <p>関連付け：<%= @list.relation %></p>
+    <p>タスク：<%= @list.task %></p>
+    <p>ルーティン：：<%= @list.routine %></p>
+    <p><%= link_to '編集', edit_list_path %></p>
+    <p><%= link_to '削除', list_path, method: :delete %></p>
+  </details>
 </div>
 
-<%= link_to '戻る', lists_path %>
-<%= link_to '編集', edit_list_path %>
-<%= link_to '削除', list_path, method: :delete %>
+
 
 
 

@@ -1,11 +1,13 @@
 <% @lists.each do |list| %>
-  <div>
-    <%= image_tag list.get_image(400,300) %>
-  </div>
-  
-  <div>
-    <%= link_to list_path(list.id) do %>
-      <p><%= list.goal %></p>
-    <% end %>
+  <div class="card text-bg-light">
+    <div>
+      <%= image_tag list.get_image(400,300) %>
+    </div>
+    
+    <div>
+      <%= link_to list_path(list.id) do %>
+        <p><%= list.goal %></p>
+      <% end %>
+    </div>
   </div>
 <% end %>

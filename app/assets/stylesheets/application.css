@@ -54,3 +54,55 @@
     background-repeat: no-repeat;
     content: '';
 }
+
+
+.accordion-006 {
+    max-width: 500px;
+    margin-bottom: 7px;
+    background-color: #a4b2ea;
+    border-radius: 5px;
+}
+
+.accordion-006 summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 1em 2em;
+    color: #d6f5ff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.accordion-006 summary::-webkit-details-marker {
+    display: none;
+}
+
+.accordion-006 summary::after {
+    transform: translateY(-25%) rotate(45deg);
+    width: 7px;
+    height: 7px;
+    margin-left: 10px;
+    border-bottom: 3px solid #7482ba;
+    border-right: 3px solid #7482ba;
+    content: '';
+    transition: transform .3s;
+}
+
+.accordion-006[open] summary::after {
+    transform: rotate(225deg);
+}
+
+.accordion-006 p {
+    transform: translateY(-10px);
+    opacity: 0;
+    margin: 0;
+    padding: .3em 2em 1.5em;
+    color: #d6f5ff;
+    transition: transform .5s, opacity .5s;
+}
+
+.accordion-006[open] p {
+    transform: none;
+    opacity: 1;
+}

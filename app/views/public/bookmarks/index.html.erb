@@ -5,12 +5,10 @@
     <div class="col-8">
       <div class="p-3 m-3 bg-info bg-opacity-10 border border-info border-3 rounded-start rounded-end">
         <%= bookmark.post %>
-  
-
-<div id="colections_buttons_<%= bookmark %>">
-  <%= render 'public/colections/colection', output: bookmark %>
-</div>
-
+        <div id="colections_buttons_<%= bookmark %>">
+          <!--_colectionからoutputの情報をbookmarkへ-->
+          <%= render 'public/colections/colection', output: bookmark %>
+        </div>
       </div>
     </div>
   <% end %>

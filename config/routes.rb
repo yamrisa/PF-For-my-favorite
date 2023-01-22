@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  # 管理者側
   namespace :admin do
     get 'home/top'
     resources :outputs, only: [:destroy]
@@ -18,11 +19,12 @@ devise_for :users,skip: [:passwords], controllers: {
   sessions: 'public/sessions'
 }
 
-# ゲストログイン
+# ゲストログイン用
 devise_scope :user do
   post 'users/guest_sign_in', to: 'public/sessions#guest_sign_in'
 end
 
+# ユーザー側
 scope module: :public do
   root to: 'homes#top'
   get 'about' => 'homes#about', as: 'about'
@@ -38,9 +40,6 @@ scope module: :public do
   resources :bookmarks, only: [:index]
   resources :timeline, only: [:index]
   resources :events
-  
-
-    
   
 end
 
