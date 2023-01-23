@@ -7,8 +7,20 @@
   src: url('../fonts/RampartOne-Regular.ttf');
 }
 
+html {
+  height: 100%;
+}
+
 body {
   font-family: "RampartOne";
-  background: radial-gradient(circle at 50% 50%, #97b4f0, #d9feff);
-  border: double 5px #ffffff;
+  background: radial-gradient(circle at 50% 50%, #e0ffff, #d9e7fe, #ebd7f4);
+  border: double 7px #000000;
+  height: 100%;
+  margin: 7px;
+}
+
+// 高さ100％にしたいところに
+.fullheight {
+  height: 100%;
+  background: #bbddff;
 }

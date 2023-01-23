@@ -1,15 +1,28 @@
 <h1>Listの編集</h1>
   <%= form_with model: @list do |f| %>
     <h4>１番愛おしい推しの画像は？</h4>
-      <%= f.file_field :image, accept: "image/*" %>
-    <h4>目標を入力してください</h4>
-      <%= f.text_field :goal %>
-    <h4>目標達成後、自分と推しにどんな良い事が還元されるか書き出してみよう！</h4>
-      <%= f.text_area :relation %>
-    <h4>毎日続けられるタスクを書こう！</h4>
-      <%= f.text_area :task_name %>
-    <h4>タスクをやる前のルーティンを決めよう！</h4>
-      <%= f.text_area :routine %>
+      <%= f.file_field :image, accept: "image/*", required: true %>
+      
+    <div class="form-floating mb-3">
+      <%= f.text_field :goal, type: "list_goal", class: "form-control", id: "floatingInput", placeholder: "oooできるようになる！", required: true %>
+      <%= f.label :goal, "★目標を設定しよう" %>
+    </div>
+    
+    <div class="form-floating mb-3">
+      <%= f.text_area :relation, type: "list_relation", class: "form-control", id: "floatingInput", placeholder: "推しのoooに貢献できる", required: true %>
+      <%= f.label :relation, "★目標達成は推しにどんな良い影響を与えらそう？"  %>
+    </div>
+    
+    <div class="form-floating mb-3">
+      <%= f.text_area :task,  type: "list_task", class: "form-control", id: "floatingInput", placeholder: "oooをする！", required: true %>
+      <%= f.label :task, "★毎日続けられるタスクを書こう！"  %> 
+    </div>
+    
+    <div class="form-floating mb-3">
+      <%= f.text_area :routine,  type: "list_routine", class: "form-control", id: "floatingInput", placeholder: "始める前にoooをする", required: true %>
+      <%= f.label :routine, "★タスクをやる前のルーティンを決めよう" %> 
+    </div>
+    
     <%= f.submit '更新' %>
   <% end %>
   <%= link_to '戻る', list_path %>

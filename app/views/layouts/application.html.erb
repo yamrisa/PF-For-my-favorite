@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <div class="container-fluid bg-primary bg-opacity-10">
+    <div class="container-fluid bg-primary bg-opacity-10 text-center fullheight">
         <header class="sticky-top">
           <div class="dropdown">
             <button type="button" class="btn btn-light" data-bs-toggle="dropdown" aria-expanded="false">
@@ -22,25 +22,25 @@
               <!--userがログインしてる場合表示-->
               <% if user_signed_in? %>
                 <li class="dropdow-item">
-                  <%= link_to "My page", my_page_path %>
+                  <%= link_to "My page", my_page_path, class:"link-info" %>
                 </li>
                 <li class="dropdow-item">
                   <%= link_to 'My List', lists_path %>
                 </li>
                 <li class="dropdow-item">
-                  <%= link_to 'My calendar', events_path %>
+                  <%= link_to 'My calendar', events_path, class:"link-info" %>
                 </li>
                 <li class="dropdow-item">
                   <%= link_to '＋List', new_list_path %>
                 </li>
                 <li class="dropdow-item">
-                  <%= link_to 'My output', outputs_path %>
+                  <%= link_to 'My output', outputs_path, class:"link-info" %>
                 </li>
                  <li class="dropdow-item">
                   <%=link_to"bookmark", bookmarks_path(@user) %>
                 </li>
                 <li class="dropdow-item">
-                  <%= link_to 'Output', timeline_index_path %>
+                  <%= link_to 'Output', timeline_index_path, class:"link-info" %>
                 </li>
                 <li class="dropdow-item">
                   <%= link_to "Log out", destroy_user_session_path, method: :delete %>
@@ -48,18 +48,17 @@
               <!--user/adminがログインしてない場合表示-->
               <% else %>
                 <li class="dropdow-item">
-                  <%= link_to "Sign up", new_user_registration_path %>
+                  <%= link_to "Sign up", new_user_registration_path, class:"link-info" %>
                 </li>
                 <li class="dropdow-item">
                   <%= link_to "Top", root_path %>
                 </li>
                 <li class="dropdow-item">
-                  <%= link_to "Log in", new_user_session_path %>
+                  <%= link_to "Log in", new_user_session_path, class:"link-info" %>
                 </li>
               <% end %>
             </ul>
           </div>
-          
         </header>
       
       <%= yield %>

@@ -1,18 +1,38 @@
 
-<%= link_to 'Back', lists_path %>
-<div>
-  <%= image_tag @list.get_image(400,300) %>
-</div>
-<div>
-  <details class="accordion-006">
-    <summary><%= @list.goal %></summary>
-    <p>  <p>目標：<%= @list.goal %></p>
-    <p>関連付け：<%= @list.relation %></p>
-    <p>タスク：<%= @list.task %></p>
-    <p>ルーティン：：<%= @list.routine %></p>
-    <p><%= link_to '編集', edit_list_path %></p>
-    <p><%= link_to '削除', list_path, method: :delete %></p>
-  </details>
+<%= link_to 'Back', lists_path, class:"link-info" %>
+<div class="container text-center">
+  <div class="row">
+    
+    <div class="col">
+      <%= image_tag @list.get_image(400,300) %>
+    </div>
+    
+    <div class="col">
+      <div class="listbox">
+        <span class="box-title">Level:1</span>
+        <p>目標：<%= @list.goal %></p>
+      </div>
+      
+      <div class="listbox">
+        <span class="box-title">Level:2</span>  
+        <p>関連付け：<%= @list.relation %></p>
+      </div>
+      
+      <div class="listbox">
+        <span class="box-title">Level:3</span>
+       <p>ルーティン：<%= @list.routine %></p>
+      </div>
+      
+      <div class="listbox">
+        <span class="box-title">Level:4</span>
+        <p>タスク：<%= @list.task %></p>
+      </div>
+      
+        <p><%= link_to '編集', edit_list_path %></p>
+        <p><%= link_to '削除', list_path, method: :delete %></p>
+    </div>
+    
+  </div>
 </div>
 
 

@@ -58,59 +58,32 @@
 
 
 /*list/showのリストボックス*/
-.accordion-006 {
-    max-width: 500px;
-    margin-bottom: 7px;
-    background-color: #a4b2ea;
-    border-radius: 5px;
-}
-
-.accordion-006 summary {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.listbox {
     position: relative;
-    padding: 1em 2em;
-    color: #d6f5ff;
-    font-weight: 600;
-    cursor: pointer;
+    margin: 2em 0;
+    padding: 0.5em 1em;
+    border: solid 3px #fff;
+    border-radius: 8px;
 }
-
-.accordion-006 summary::-webkit-details-marker {
-    display: none;
+.listbox .box-title {
+    position: absolute;
+    display: inline-block;
+    top: -13px;
+    left: 10px;
+    padding: 0 9px;
+    line-height: 1;
+    font-size: 19px;
+    background: none;
+    color: #000;
+    font-weight: bold;
 }
-
-.accordion-006 summary::after {
-    transform: translateY(-25%) rotate(45deg);
-    width: 7px;
-    height: 7px;
-    margin-left: 10px;
-    border-bottom: 3px solid #7482ba;
-    border-right: 3px solid #7482ba;
-    content: '';
-    transition: transform .3s;
-}
-
-.accordion-006[open] summary::after {
-    transform: rotate(225deg);
-}
-
-.accordion-006 p {
-    transform: translateY(-10px);
-    opacity: 0;
-    margin: 0;
-    padding: .3em 2em 1.5em;
-    color: #d6f5ff;
-    transition: transform .5s, opacity .5s;
-}
-
-.accordion-006[open] p {
-    transform: none;
-    opacity: 1;
+.listbox p {
+    margin: 0; 
+    padding: 0;
 }
 
 
-/*ボタン*/
+/*menuボタン*/
 .dropdown button {
     appearance: none;
     margin: 0;
@@ -127,11 +100,11 @@
   padding: 1em 2em 1em 1em;
   width: 175px;
   font-size: 14px;
-  color: #fff;
+  color: #000;
   text-align: center;
     line-height: 1;
   background: #5bbee5;
-  background: linear-gradient(to right, #5bbee5, #52ddae);
+  background: linear-gradient(135deg, #b6b1f9, #b2f6ef, #d4e2ff);
   text-indent: 0.1em;
   letter-spacing: 0.1em;
   border-radius: 1.5em;
@@ -157,3 +130,65 @@
   right: 1em;
 }
 
+/*home/topタイトル名*/
+.outline {
+  display        : inline-block;
+  border-bottom : 2px solid #000000;   
+  color          : #eeeeff;            /* 文字の色 */
+  font-size      : 36pt;               /* 文字のサイズ */
+  letter-spacing : 4px;                /* 文字間 */
+  text-shadow    : 
+       2px  2px 6px #e5aaf7,
+      -2px  2px 6px #e5aaf7,
+       2px -2px 6px #e5aaf7,
+      -2px -2px 6px #e5aaf7,
+       2px  0px 6px #e5aaf7,
+       0px  2px 6px #e5aaf7,
+      -2px  0px 6px #e5aaf7,
+       0px -2px 6px #e5aaf7;        /* 文字の影 */
+}
+
+/*home/topプレイヤー選択文*/
+.blink {
+  animation: blinkAnime 1.5s infinite alternate;
+}
+@keyframes blinkAnime{
+   0% { color: #000000 }
+ 100% { color: #dcb9ff }
+}
+
+/*list/index画像半透明化*/
+.imgArea {
+  position: relative;
+  padding : 0
+}
+.throu {
+  opacity : 0.5;
+}
+
+/*class: 'btns'*/
+.btns {
+    appearance: none;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+    outline: none;
+}
+
+.btns {
+  position: relative;
+  display: block;
+  padding: 1em 2em 1em 1em;
+  width: 175px;
+  font-size: 14px;
+  color: #000;
+  text-align: center;
+    line-height: 1;
+  background: #5bbee5;
+  background: linear-gradient(135deg, #c58bff, #ffa5ff, #afd7ff);
+  text-indent: 0.1em;
+  letter-spacing: 0.1em;
+  border-radius: 1.5em;
+}

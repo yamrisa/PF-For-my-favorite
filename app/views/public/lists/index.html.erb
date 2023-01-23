@@ -2,7 +2,9 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
       <% @lists.each do |list| %>
-        <%= image_tag list.get_image(400,300), alt: "リストの写真", class:"d-block w-100" %>
+        <div class="imgArea">
+          <%= image_tag list.get_image(400,300), alt: "リストの写真", class:"d-block w-100" %>
+        </div>
           <div class="carousel-caption d-none d-md-block">
             <h5>
               <%= link_to list_path(list.id) do %>
