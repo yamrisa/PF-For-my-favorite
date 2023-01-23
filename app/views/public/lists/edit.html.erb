@@ -1,5 +1,5 @@
 <div class="container text-center">
-  <h1>Listの編集</h1>
+  <h1 class="listbox col-4 offset-4">List</h1>
     <%= form_with model: @list do |f| %>
       <h4>１番愛おしい推しの画像は？</h4>
         <%= f.file_field :image, accept: "image/*", required: true %>
@@ -24,8 +24,8 @@
         <%= f.label :routine, "★タスクをやる前のルーティンを決めよう" %> 
       </div>
       
-      <%= f.submit '更新',class: 'btns' %>
+      <%= f.submit 'UPDATE',class: 'btns' %>
       
     <% end %>
-    <%= link_to '戻る', list_path %>
+    <%= link_to 'BACK', list_path %>
 </div>

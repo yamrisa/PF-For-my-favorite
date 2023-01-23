@@ -22,7 +22,7 @@
           <div class="col-auto">
             <div class="listbox-in">
               <%= link_to output_path(output.id) do %>
-                <%= output.post %>
+                <%=  safe_join(output.post.split("\n"),tag(:br)) %>
               <% end %>
             </div>
           </div>

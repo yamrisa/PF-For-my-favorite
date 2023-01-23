@@ -14,7 +14,7 @@
           <div id="colections_buttons_<%= output.id %>">
             <%= render 'public/colections/colection', output: output %>
           </div>
-          <%= output.post %>
+          <%=  safe_join(output.post.split("\n"),tag(:br)) %>
         </div>
       </div>
     <% end %>

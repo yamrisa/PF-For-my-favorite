@@ -8,7 +8,7 @@
           <div class="carousel-caption d-none d-md-block">
             <h5>
               <%= link_to list_path(list.id) do %>
-           　　　 <p><%= list.goal %></p>
+           　　<P> <%=  safe_join(list.goal.split("\n"),tag(:br)) %></p>
               <% end %>
             </h5>
           </div>
