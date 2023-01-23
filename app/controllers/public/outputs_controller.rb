@@ -4,7 +4,7 @@ class Public::OutputsController < ApplicationController
   def index
     @user = current_user
     @output = Output.new
-    @outputs = Output.where(user_id: current_user.id)
+    @outputs = Output.where(user_id: current_user.id).page(params[:page])
   end
   
   def create

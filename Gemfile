@@ -70,3 +70,5 @@ gem 'jquery-rails'
 gem 'simple_calendar', '~> 2.0'
 
 gem 'rails-i18n'
+
+gem 'kaminari','~> 1.2.1'

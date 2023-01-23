@@ -3,9 +3,9 @@
     <h1>Favorite</h1>
   </div>
   
-    <div class="row">
+    <div class="row ">
       <% @like_outputs .each do |bookmark| %>
-        <div class="col-4 offset-4">
+        <div class="col-auto">
           <div class="p-3 m-3 bg-info bg-opacity-10 border border-info border-3 rounded-start rounded-end">
             <%= bookmark.post %>
             <div id="colections_buttons_<%= bookmark %>">
@@ -15,6 +15,7 @@
           </div>
         </div>
       <% end %>
+      <%= paginate @like_outputs %>
     </div>
     
 </div>

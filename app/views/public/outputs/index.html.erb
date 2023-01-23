@@ -1,34 +1,33 @@
-<div class="row">
-  <h1>＋ Outout</h1>
-</div>
-
-<div class="row">
-  <%= form_with model: @output do |f| %>
-    <h4>投稿文</h4>
-      <%= f.text_area :post %>
-    <h4></h4>
-      <%#= f.text_area :task_name %>
-    <%= f.label :release, "表示状態" %><br>
-    <%= f.select :release,[["公開", "release"],["非公開", "private"]], include_blank: "選択してください" %><br>
-      <%= f.submit '投稿' %>
-  <% end %>
-</div>
-  
-<div class="row">  
-  <h1>My output</h1>
-</div>
-
-<div class="row">
-  <% @outputs.each do |output| %>
-    <div class="col-8">
-      <div class="p-3 m-3 bg-info bg-opacity-10 border border-info border-3 rounded-start rounded-end">
-        <div>
-          <%= link_to output_path(output.id) do %>
-            <%= output.post %>
-          <% end %>
-        </div>
+<div class="container text-center">
+  <div class="row">
+    
+    <div class="col-4">
+      <div class="listbox">
+        <h1>＋ Outout</h1>
+        <%= form_with model: @output do |f| %>
+          <h4>投稿文</h4>
+            <%= f.text_area :post %><br>
+            <%= f.label :release, "表示状態" %><br>
+            <%= f.select :release,[["公開", "release"],["非公開", "private"]], include_blank: "選択してください" %><br>
+            <%= f.submit '投稿' %>
+        <% end %>
       </div>
     </div>
-  <% end %>
+  
+    <div class="col-8">
+      <div class="listbox">
+        <h1>My output</h1>
+        <%= paginate @outputs %>
+        <% @outputs.each do |output| %>
+          <div class="col-auto">
+            <div class="listbox-in">
+              <%= link_to output_path(output.id) do %>
+                <%= output.post %>
+              <% end %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+    
+  </div>
 </div>
-

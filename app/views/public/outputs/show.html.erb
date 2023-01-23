@@ -1,23 +1,22 @@
-<div class="row">
-  <h1>詳細</h1>
-</div>
-
-<div class="row">
-  <div class="col-8">
-    <div class="p-3 m-3 bg-info bg-opacity-10 border border-info border-3 rounded-start rounded-end">
-      
+<div class="container text-center">
+  <div class="listbox">
+    
+    <div class="row">
+      <h1>詳細</h1>
+    </div>
+  
+    <div class="row">
       <div>
-        <p>投稿:<%= @output.post %></p>
-        <p>公開状態:<%= @output.release %></p>
+        <p>投稿:<%= safe_join(@output.post.split("\n"),tag(:br)) %>></p>
+        <p>公開状態:<%= safe_join(@output.release.split("\n"),tag(:br)) %></p>
       </div>
-      
       <%= link_to '戻る', outputs_path %>
       <!--投稿したuserのみ表示-->
       <% if @output.user_id == current_user.id %>
         <%= link_to '編集', edit_output_path %>
         <%= link_to '削除', output_path, method: :delete %>
       <% end %>
-      
     </div>
+    
   </div>
 </div>

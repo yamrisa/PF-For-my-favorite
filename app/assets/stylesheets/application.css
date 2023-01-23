@@ -59,7 +59,7 @@
 /*list/showのリストボックス*/
 .listbox {
     position: relative;
-    margin: 2em 0;
+    margin: 0.5em 0;
     padding: 0.5em 1em;
     border: solid 3px #fff;
     border-radius: 8px;
@@ -81,6 +81,13 @@
     padding: 0;
 }
 
+.listbox-in {
+    position: relative;
+    margin: 0.5em 0;
+    padding: 0.5em 1em;
+    border: solid 1px #fff;
+    border-radius: 8px;
+}
 
 /*menuボタン*/
 .dropdown button {
@@ -190,4 +197,43 @@
   text-indent: 0.1em;
   letter-spacing: 0.1em;
   border-radius: 1.5em;
+}
+
+/*ページネーション*/
+.pagination{
+  width: fit-content;
+  margin: 25px auto;
+  font-size: 0.8rem;
+  line-height: 2rem;
+}
+
+.first a,
+.prev a,
+.page a,
+.next a,
+.last a{
+  color: #000000;
+  text-decoration: none;
+  padding: 5px;
+}
+
+.first a:hover,
+.prev a:hover,
+.page a:hover,
+.next a:hover,
+.last a:hover{
+  color: #ffffff;
+    text-shadow    : 
+       2px  2px 9px #89ffff,
+      -2px  2px 9px #89ffff,
+       2px -2px 9px #89ffff,
+      -2px -2px 9px #89ffff,
+       2px  0px 9px #89ffff,
+       0px  2px 9px #89ffff,
+      -2px  0px 9px #89ffff,
+       0px -2px 9px #89ffff;
+}
+
+span.current{
+  color: #777777;
 }
