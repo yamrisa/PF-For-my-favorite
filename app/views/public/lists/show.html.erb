@@ -9,23 +9,23 @@
     
     <div class="col">
       <div class="listbox">
-        <span class="box-title">Level:1</span>
-        <p>目標：<%= @list.goal %></p>
+        <span class="box-title">Level:1(Goal)</span>
+        <p><%= safe_join(@list.goal.split("\n"),tag(:br)) %></p>
       </div>
       
       <div class="listbox">
-        <span class="box-title">Level:2</span>  
-        <p>関連付け：<%= @list.relation %></p>
+        <span class="box-title">Level:2(Relation)</span>  
+        <p><%= safe_join(@list.relation.split("\n"),tag(:br)) %></p>
       </div>
       
       <div class="listbox">
-        <span class="box-title">Level:3</span>
-       <p>ルーティン：<%= @list.routine %></p>
+        <span class="box-title">Level:3(Routine)</span>
+       <p><%= safe_join(@list.routine.split("\n"),tag(:br)) %></p>
       </div>
       
       <div class="listbox">
-        <span class="box-title">Level:4</span>
-        <p>タスク：<%= @list.task %></p>
+        <span class="box-title">Level:4(Task)</span>
+        <p><%= safe_join(@list.task.split("\n"),tag(:br)) %></p>
       </div>
       
         <p><%= link_to '編集', edit_list_path %></p>

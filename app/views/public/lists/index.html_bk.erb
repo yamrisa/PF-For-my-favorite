@@ -1,0 +1,27 @@
+<div id="carouselExampleControls" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <% @lists.each do |list| %>
+        <div class="imgArea">
+          <%= image_tag list.get_image(400,300), alt: "リストの写真", class:"d-block w-100" %>
+        </div>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>
+              <%= link_to list_path(list.id) do %>
+           　　　 <p><%= list.goal %></p>
+              <% end %>
+            </h5>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <button type="button" class="carousel-control-prev" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">前へ</span>
+    </button>
+    <button type="button" class="carousel-control-next" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">次へ</span>
+    </button>
+  </div>
+

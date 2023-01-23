@@ -1,15 +1,20 @@
-<h1>Bookmark</h1>
-
-<div class="row">
-  <% @like_outputs .each do |bookmark| %>
-    <div class="col-8">
-      <div class="p-3 m-3 bg-info bg-opacity-10 border border-info border-3 rounded-start rounded-end">
-        <%= bookmark.post %>
-        <div id="colections_buttons_<%= bookmark %>">
-          <!--_colectionからoutputの情報をbookmarkへ-->
-          <%= render 'public/colections/colection', output: bookmark %>
+<div class="container text-center">
+  <div class="row">
+    <h1>Favorite</h1>
+  </div>
+  
+    <div class="row">
+      <% @like_outputs .each do |bookmark| %>
+        <div class="col-4 offset-4">
+          <div class="p-3 m-3 bg-info bg-opacity-10 border border-info border-3 rounded-start rounded-end">
+            <%= bookmark.post %>
+            <div id="colections_buttons_<%= bookmark %>">
+              <!--_colectionからoutputの情報をbookmarkへ-->
+              <%= render 'public/colections/colection', output: bookmark %>
+            </div>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
-  <% end %>
+    
 </div>

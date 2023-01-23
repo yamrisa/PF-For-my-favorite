@@ -13,7 +13,7 @@
 
   <body>
     <div class="container-fluid bg-primary bg-opacity-10 text-center fullheight">
-        <header class="sticky-top">
+        <header class="sticky-top pt-2">
           <div class="dropdown">
             <button type="button" class="btn btn-light" data-bs-toggle="dropdown" aria-expanded="false">
                MENU
@@ -37,7 +37,7 @@
                   <%= link_to 'My output', outputs_path, class:"link-info" %>
                 </li>
                  <li class="dropdow-item">
-                  <%=link_to"bookmark", bookmarks_path(@user) %>
+                  <%=link_to"Favorite", bookmarks_path(@user) %>
                 </li>
                 <li class="dropdow-item">
                   <%= link_to 'Output', timeline_index_path, class:"link-info" %>

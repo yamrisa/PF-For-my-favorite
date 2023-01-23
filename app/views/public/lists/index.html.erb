@@ -1,27 +1,32 @@
-<div id="carouselExampleControls" class="carousel slide">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <% @lists.each do |list| %>
-        <div class="imgArea">
-          <%= image_tag list.get_image(400,300), alt: "リストの写真", class:"d-block w-100" %>
-        </div>
-          <div class="carousel-caption d-none d-md-block">
-            <h5>
-              <%= link_to list_path(list.id) do %>
-           　　　 <p><%= list.goal %></p>
-              <% end %>
-            </h5>
-          </div>
-        <% end %>
-      </div>
+<div class="row justify-content-center">
+  <div id="carouselOption1" class="carousel slide col-6">
+    <!-- インジケータの設定 -->
+    <div class="carousel-indicators">
+      <% @lists.each_with_index do |list, index| %>
+      <button type="button" data-bs-target="#carouselOption1" data-bs-slide-to="<%= index %>" class="<%= index == 0 ? 'active' : '' %>" aria-current="<%= index == 0 ? 'true' : '' %>" aria-label="スライド <%= index + 1 %>"></button>
+      <% end %>
     </div>
-    <button type="button" class="carousel-control-prev" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <!-- スライドさせる画像の設定 -->
+    <div class="carousel-inner">
+      <% @lists.each do |list| %>
+        <div class="carousel-item active">
+        <%= image_tag list.image, class: "d-block w-100" %>
+        <div class="carousel-caption d-none d-md-block">
+          <%= link_to list_path(list.id) do %>
+          <h2><%= list.goal %></h2>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <!-- スライドコントロールの設定 -->
+    <button type="button" class="carousel-control-prev" data-bs-target="#carouselOption1" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">前へ</span>
     </button>
-    <button type="button" class="carousel-control-next" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <button type="button" class="carousel-control-next" data-bs-target="#carouselOption1" data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">次へ</span>
     </button>
   </div>
-
+</div>
