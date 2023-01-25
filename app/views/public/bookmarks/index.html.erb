@@ -3,9 +3,9 @@
     <h1>Favorite</h1>
   </div>
   <%= paginate @like_outputs %>
-    <div class="row ">
+    <div class="row">
       <% @like_outputs .each do |bookmark| %>
-        <div class="col">
+        
           <div class="listbox">
             <div id="colections_buttons_<%= bookmark %>">
               <!--_colectionからoutputの情報をbookmarkへ-->
@@ -13,7 +13,7 @@
               <p><%= safe_join(bookmark.post.split("\n"),tag(:br)) %></p>
             </div>
           </div>
-        </div>
+        
       <% end %>
     </div>
     

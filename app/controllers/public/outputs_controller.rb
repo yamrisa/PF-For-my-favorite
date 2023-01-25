@@ -1,4 +1,8 @@
 class Public::OutputsController < ApplicationController
+  # リファクタリング
+  before_action :set_output, only: [:show, :edit, :update, :destroy]
+  # URL直打ち防止
+  before_action :prevent_url, only: [:show, :edit, :update, :destroy]
 
   # 新規投稿とログイン中ユーザーの投稿のみ表示
   def index
@@ -16,21 +20,17 @@ class Public::OutputsController < ApplicationController
 
 
   def show
-    @output = Output.find(params[:id]) 
   end
 
   def edit
-    @output = Output.find(params[:id]) 
   end
 
   def update
-    @output = Output.find(params[:id])
     @output.update(output_params)
     redirect_to output_path(@output.id)
   end
 
   def destroy
-    @output = Output.find(params[:id])
     @output.destroy
     redirect_to outputs_path
   end
@@ -39,6 +39,16 @@ class Public::OutputsController < ApplicationController
 
   def output_params
     params.require(:output).permit(:user_id, :post, :release)
+  end
+  
+  def set_output
+    @output = Output.find(params[:id]) 
+  end
+  
+  def prevent_url
+    if @output.user_id != current_user.id
+      redirect_to root_path
+    end
   end
   
 end

@@ -1,7 +1,5 @@
 class Public::ListsController < ApplicationController
-  # リファクタリング
   before_action :set_list, only: [:show, :edit, :update, :destroy]
-  # URL直打ち防止
   before_action :prevent_url, only: [:show, :edit, :update, :destroy]
   
   
@@ -39,7 +37,7 @@ class Public::ListsController < ApplicationController
     redirect_to lists_path
   end
   
-  # 投稿データのストロングパラメータ
+  
   private
 
   def list_params
