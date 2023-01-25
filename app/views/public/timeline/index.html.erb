@@ -6,20 +6,17 @@
       <%= form.button "", class: "search-btn" %> 
     <% end %>
   </div>
+  <h1>Timeline</h1>
   
   <%= paginate @outputs %>
   
   <div class="row">
     <% @outputs.each do |output| %>
-      <div class="col-5">
-        <div class="listbox">
-          <div id="colections_buttons_<%= output.id %>">
-            <%= render 'public/colections/colection', output: output %>
-          </div>
-          <div class="">
-            <p><%= safe_join(output.post.split("\n"),tag(:br)) %></p>
-          </div>
+      <div class="listbox">
+        <div id="colections_buttons_<%= output.id %>">
+          <%= render 'public/colections/colection', output: output %>
         </div>
+        <p><%= safe_join(output.post.split("\n"),tag(:br)) %></p>
       </div>
     <% end %>
   </div>

@@ -17,13 +17,12 @@ body {
   border: double 7px #000000;
   height: calc(100vh - 7px - 7px);
   margin: 7px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: $zindex-fixed;
   
-}
-
-// 高さ100％にしたいところに
-.fullheight {
-  height: 100vh;
-  background: #bbddff;
 }
 
 // ヘッダーメニュー開いた時
