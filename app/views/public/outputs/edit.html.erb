@@ -1,10 +1,12 @@
-<h1>編集</h1>
-<%= form_with model: @output do |f| %>
-  <h4>投稿文</h4>
-  <%= f.text_area :post %>
-  <%= f.label :release, "表示状態" %><br>
-  <%= f.select :release,[["公開", "release"],["非公開", "private"]], include_blank: "選択してください" %><br>
-  <%= f.submit '更新' %>
-<% end %>
+<div class="listbox">
+  <h1>編集</h1>
+  <%= form_with model: @output do |f| %>
+    <h4>投稿文</h4>
+    <%= f.text_area :post %>
+    <%= f.label :release, "表示状態" %><br>
+    <%= f.select :release,[["公開", "release"],["非公開", "private"]], include_blank: "選択してください" %><br>
+    <%= f.submit 'Update', class: "btns" %>
+  <% end %>
+</div>
 
-<%= link_to '戻る', output_path %>
+<%= link_to 'BACK', output_path, class:"link-info" %>

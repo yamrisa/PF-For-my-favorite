@@ -238,3 +238,7 @@
 span.current{
   color: #777777;
 }
+
+p {
+  word-break: break-all;
+}

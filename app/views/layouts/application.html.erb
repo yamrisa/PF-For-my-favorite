@@ -6,7 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%#= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -25,10 +25,10 @@
                   <%= link_to "My page", my_page_path, class:"link-info" %>
                 </li>
                 <li class="dropdow-item">
-                  <%= link_to 'My List', lists_path %>
+                  <%= link_to 'My calendar', events_path %>
                 </li>
                 <li class="dropdow-item">
-                  <%= link_to 'My calendar', events_path, class:"link-info" %>
+                  <%= link_to 'My List', lists_path, class:"link-info" %>
                 </li>
                 <li class="dropdow-item">
                   <%= link_to '＋List', new_list_path %>
@@ -37,7 +37,7 @@
                   <%= link_to 'My output', outputs_path, class:"link-info" %>
                 </li>
                  <li class="dropdow-item">
-                  <%=link_to"Favorite", bookmarks_path(@user) %>
+                  <%=link_to"♡Favorite", bookmarks_path(@user) %>
                 </li>
                 <li class="dropdow-item">
                   <%= link_to 'Output', timeline_index_path, class:"link-info" %>

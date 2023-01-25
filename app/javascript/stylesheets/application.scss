@@ -8,7 +8,7 @@
 }
 
 html {
-  height: 100%;
+  height: 100vh;
 }
 
 body {
@@ -22,10 +22,11 @@ body {
 
 // 高さ100％にしたいところに
 .fullheight {
-  height: 100%;
+  height: 100vh;
   background: #bbddff;
 }
 
+// ヘッダーメニュー開いた時
  .dropdown-menu {
     --bs-dropdown-bg: #e0ffff;
 }

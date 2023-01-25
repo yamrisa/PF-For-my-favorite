@@ -1,25 +1,25 @@
-<div class="container text-center">
+<div class="container-fluid text-center">
   <div class="row">
     
-    <div class="col-5">
+    <div class="col-7 listbox">
       <%= month_calendar events: @events do |date, events| %>
         <%= date.day %>
          <% events.each do |event| %>
           <div>
-            <%= event.title %>
+            <p><%= event.title %></p>
           </div>
         <% end %>
       <% end %>
     </div>
   
-    <div class="col-7">
+    <div class="col-4">
       <div class="listbox">
       <h1>＋<i class="fas fa-pencil-alt"></i></h1>
       <%= form_with(model: @event, local: true) do |form| %>
       
         <div class="title">
           <%= form.label :title %>
-          <%= form.text_field :title %>
+          <%= form.text_field :title, required: true, placeholder: "up to 10 characters" %>
         </div>
       
           <div class="time">

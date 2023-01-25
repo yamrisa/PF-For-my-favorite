@@ -1,9 +1,11 @@
 class Output < ApplicationRecord
   
-  has_many :taggings, dependent: :destroy
   has_many :colections, dependent: :destroy
   has_many :reviews, dependent: :destroy
   belongs_to :user
+  
+  # 必須入力のバリデーション
+  validates :post, :release, presence: true
   
   # colectionsテーブルにuser.idが存在するかどうか
   def colectioned_by?(user)

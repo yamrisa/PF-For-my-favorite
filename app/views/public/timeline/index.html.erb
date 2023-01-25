@@ -1,24 +1,27 @@
 <div class="container text-center">
   
-  <div class="row p-2">
+  <div class="row">
     <%= form_with(url: timeline_index_path(@outputs_post), remote: true, method: :get, class: "output-search-form search-form-003") do |form| %>
       <%= form.text_field :keyword, placeholder: "Search", class: "search-input" %>
       <%= form.button "", class: "search-btn" %> 
     <% end %>
   </div>
   
-  <div class="row flex-column align-items-start">
+  <%= paginate @outputs %>
+  
+  <div class="row">
     <% @outputs.each do |output| %>
       <div class="col-5">
-        <div class="p-3 m-3 bg-info bg-opacity-10 border border-info border-3 rounded-start rounded-end">
+        <div class="listbox">
           <div id="colections_buttons_<%= output.id %>">
             <%= render 'public/colections/colection', output: output %>
           </div>
-          <%=  safe_join(output.post.split("\n"),tag(:br)) %>
+          <div class="">
+            <p><%= safe_join(output.post.split("\n"),tag(:br)) %></p>
+          </div>
         </div>
       </div>
     <% end %>
-    <%= paginate @outputs %>
   </div>
   
 </div>

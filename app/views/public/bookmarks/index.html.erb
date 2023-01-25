@@ -2,20 +2,19 @@
   <div class="row">
     <h1>Favorite</h1>
   </div>
-  
+  <%= paginate @like_outputs %>
     <div class="row ">
       <% @like_outputs .each do |bookmark| %>
-        <div class="col-auto">
-          <div class="p-3 m-3 bg-info bg-opacity-10 border border-info border-3 rounded-start rounded-end">
-            <%= bookmark.post %>
+        <div class="col">
+          <div class="listbox">
             <div id="colections_buttons_<%= bookmark %>">
               <!--_colectionからoutputの情報をbookmarkへ-->
               <%= render 'public/colections/colection', output: bookmark %>
+              <p><%= safe_join(bookmark.post.split("\n"),tag(:br)) %></p>
             </div>
           </div>
         </div>
       <% end %>
-      <%= paginate @like_outputs %>
     </div>
     
 </div>

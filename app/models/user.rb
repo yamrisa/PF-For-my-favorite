@@ -4,12 +4,16 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
          
+  # アソシエーション
   has_many :lists, dependent: :destroy
   has_many :outputs, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_many :colections, dependent: :destroy
   has_many :colection_outputs, through: :colections, source: :output , dependent: :destroy
   has_many :events, dependent: :destroy
+  
+  # バリデーション
+  validates :name, :email, :password, presence: true
   
   #ゲストログイン内のメソッド
   def self.guest

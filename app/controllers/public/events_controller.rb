@@ -8,7 +8,7 @@ class Public::EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.user_id = current_user.id
-    @event.save!
+    @event.save
     redirect_to events_path(current_user)
   end
   
