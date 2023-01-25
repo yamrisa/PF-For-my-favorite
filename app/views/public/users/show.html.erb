@@ -7,7 +7,9 @@
         
         <p>Email: <%= @user.email %></p>
         
-        <%= link_to '編集', information_path %>
+        <% if @user.name != "Guest player" %>
+          <%= link_to '編集', information_path %>
+        <% end %>
     </div>
   </div>
 </div>
