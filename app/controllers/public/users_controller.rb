@@ -1,11 +1,7 @@
 class Public::UsersController < ApplicationController
-  # ログインしてないとコントローラーの内容を実行しない
   before_action :authenticate_user!
-  # editアクション実行前にensure_guest_userを実行
   before_action :ensure_guest_user, only: [:edit]
-  # リファクタリング
   before_action :set_user, only: [:show, :edit, :update]
-  # URL直打ち防止
   before_action :prevent_url, only: [:show, :edit, :update]
   
   def show
@@ -19,18 +15,19 @@ class Public::UsersController < ApplicationController
     redirect_to my_page_path
   end
   
-  # ストロングパラメータ
+  
   private
 
   def user_params
     params.require(:user).permit(:name, :email, :password)
   end
   
-  
+  # ログインしてないとコントローラーの内容を実行しない
   def set_user
     @user = current_user
   end
   
+  # URL直打ち防止
   def prevent_url
     if @user.id != current_user.id
       redirect_to root_path

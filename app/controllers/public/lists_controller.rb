@@ -10,15 +10,14 @@ class Public::ListsController < ApplicationController
   
   # 投稿データの保存
   def create
-    @list = List.new(list_params)
-    @list.user_id = current_user.id
+    @list = current_user.lists.new(list_params)
     @list.save
     redirect_to lists_path
   end
 
   # ログイン中ユーザーのリスト一覧表示
   def index
-    @lists = List.where(user_id: current_user.id)
+    @lists = current_user.lists
   end
 
   def show
