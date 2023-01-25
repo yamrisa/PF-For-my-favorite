@@ -1,4 +1,4 @@
-@import "bootstrap";
+//@import "bootstrap";
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 
 //フォントの変更 
@@ -17,12 +17,17 @@ body {
   border: double 7px #000000;
   height: calc(100vh - 7px - 7px);
   margin: 7px;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: $zindex-fixed;
+ // position: fixed;
+//top: 0;
+ // right: 0;
+//  left: 0;
+//  z-index: $zindex-fixed;
+  padding-bottom: 5px;
   
+}
+.main-div{
+  height: 100%;
+   overflow-y: scroll;
 }
 
 // ヘッダーメニュー開いた時
