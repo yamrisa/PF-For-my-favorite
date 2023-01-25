@@ -1,4 +1,10 @@
 class Public::ListsController < ApplicationController
+  # リファクタリング
+  before_action :set_list, only: [:show, :edit, :update, :destroy]
+  # URL直打ち防止
+  before_action :prevent_url, only: [:show, :edit, :update, :destroy]
+  
+  
   # 空のオブジェクト作成
   def new
     @list = List.new
@@ -18,21 +24,17 @@ class Public::ListsController < ApplicationController
   end
 
   def show
-    @list = List.find(params[:id]) 
   end
 
   def edit
-    @list = List.find(params[:id]) 
   end
 
   def update
-    @list = List.find(params[:id])
     @list.update(list_params)
     redirect_to list_path
   end
 
   def destroy
-    @list = List.find(params[:id])
     @list.destroy
     redirect_to lists_path
   end
@@ -43,4 +45,15 @@ class Public::ListsController < ApplicationController
   def list_params
     params.require(:list).permit(:user_id, :image, :goal, :relation, :task, :routine)
   end
+  
+  def set_list
+    @list = List.find(params[:id]) 
+  end
+  
+  def prevent_url
+    if @list.user_id != current_user.id
+      redirect_to root_path
+    end
+  end
+  
 end

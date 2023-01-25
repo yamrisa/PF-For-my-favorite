@@ -19,7 +19,7 @@
                MENU
             </button>
             <ul class="dropdown-menu">
-              <!--userがログインしてる場合表示-->
+              <!--ログインしてる場合表示-->
               <% if user_signed_in? %>
                 <li class="dropdow-item">
                   <%= link_to "My page", my_page_path, class:"link-info" %>
@@ -45,7 +45,7 @@
                 <li class="dropdow-item">
                   <%= link_to "Log out", destroy_user_session_path, method: :delete %>
                 </li>
-              <!--user/adminがログインしてない場合表示-->
+              <!--ログインしてない場合表示-->
               <% else %>
                 <li class="dropdow-item">
                   <%= link_to "Sign up", new_user_registration_path, class:"link-info" %>

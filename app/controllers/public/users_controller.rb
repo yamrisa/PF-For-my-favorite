@@ -1,17 +1,20 @@
 class Public::UsersController < ApplicationController
+  # ログインしてないとコントローラーの内容を実行しない
+  before_action :authenticate_user!
   # editアクション実行前にensure_guest_userを実行
   before_action :ensure_guest_user, only: [:edit]
+  # リファクタリング
+  before_action :set_user, only: [:show, :edit, :update]
+  # URL直打ち防止
+  before_action :prevent_url, only: [:show, :edit, :update]
   
   def show
-    @user = current_user
   end
 
   def edit
-    @user = current_user
   end
 
   def update
-    @user = current_user
     @user.update(user_params)
     redirect_to my_page_path
   end
@@ -21,6 +24,17 @@ class Public::UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password)
+  end
+  
+  
+  def set_user
+    @user = current_user
+  end
+  
+  def prevent_url
+    if @user.user_id != current_user.id
+      redirect_to root_path
+    end
   end
   
   # user編集画面のURLを直接入力された場合メッセージを表示してuser詳細画面へリダイレクト
