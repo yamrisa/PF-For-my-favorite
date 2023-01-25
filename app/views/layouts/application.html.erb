@@ -21,9 +21,11 @@
             <ul class="dropdown-menu">
               <!--ログインしてる場合表示-->
               <% if user_signed_in? %>
-                <li class="dropdow-item">
-                  <%= link_to "My page", my_page_path, class:"link-info" %>
-                </li>
+                <% if current_user.name != "Guest player" %>
+                  <li class="dropdow-item">
+                    <%= link_to "My page", my_page_path, class:"link-info" %>
+                  </li>
+                <% end %>
                 <li class="dropdow-item">
                   <%= link_to 'My calendar', events_path %>
                 </li>
@@ -42,6 +44,11 @@
                 <li class="dropdow-item">
                   <%= link_to 'Output', timeline_index_path, class:"link-info" %>
                 </li>
+                <li class="dropdow-item">
+                  <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+                </li>
+              <!--adminがログインしてる場合-->
+              <% elsif admin_signed_in? %>
                 <li class="dropdow-item">
                   <%= link_to "Log out", destroy_user_session_path, method: :delete %>
                 </li>
