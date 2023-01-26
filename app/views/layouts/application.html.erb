@@ -44,7 +44,7 @@
                   <%=link_to"♡Favorite", bookmarks_path(@user) %>
                 </li>
                 <li class="dropdow-item">
-                  <%= link_to 'Output', timeline_index_path, class:"link-info" %>
+                  <%= link_to 'Timeline', timeline_index_path, class:"link-info" %>
                 </li>
                 <li class="dropdow-item">
                   <%= link_to "Log out", destroy_user_session_path, method: :delete %>
@@ -52,7 +52,7 @@
               <!--adminがログインしてる場合-->
               <% elsif admin_signed_in? %>
                 <li class="dropdow-item">
-                  <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+                  <%= link_to "Log out", destroy_admin_session_path, method: :delete %>
                 </li>
               <!--ログインしてない場合表示-->
               <% else %>

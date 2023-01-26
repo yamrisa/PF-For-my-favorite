@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   
-  # 管理者側
-  namespace :admin do
-    get 'home/top'
-    resources :outputs, only: [:destroy]
-  end
+# 管理者側
+namespace :admin do
+  get 'home/top'
+  resources :outputs, only: [:destroy]
+end
 
 # 管理者用
 # URL /admin/sign_in ...

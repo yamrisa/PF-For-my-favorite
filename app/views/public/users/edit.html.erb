@@ -1,11 +1,17 @@
-<h1>編集</h1>
-
-<%= form_with model: @user, url: my_page_update_path(@user.id) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name, required: true %>
-  <%= f.label :email %>
-  <%= f.email_field :email, required: true %>
-  <%= f.submit "保存" %>
-<% end %>
-
-<%= link_to '戻る', my_page_path %>
+<div class="row justify-content-center listbox">
+  <div class="col-auto p-1">
+    <h1>編集</h1>
+    
+    <div class="listbox-in">
+      <%= form_with model: @user, url: my_page_update_path(@user.id) do |f| %>
+        <p class="m-1"><%= f.label :name %>
+        <%= f.text_field :name, required: true %></p>
+        <p class="m-1"><%= f.label :email %>
+        <%= f.email_field :email, required: true %></p>
+        <%= f.submit "UPDATE",class: 'btns' %>
+      <% end %>
+      
+      <%= link_to 'BACK', my_page_path %>
+    </div>
+  </div>
+</div>
