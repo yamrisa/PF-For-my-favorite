@@ -1,11 +1,13 @@
 <div class="row justify-content-center">
   <div id="carouselOption1" class="carousel slide col-6">
+    
     <!-- インジケータの設定 -->
     <div class="carousel-indicators">
       <% @lists.each_with_index do |list, index| %>
       <button type="button" data-bs-target="#carouselOption1" data-bs-slide-to="<%= index %>" class="<%= index == 0 ? 'active' : '' %>" aria-current="<%= index == 0 ? 'true' : '' %>" aria-label="スライド <%= index + 1 %>"></button>
       <% end %>
     </div>
+    
     <!-- スライドさせる画像の設定 -->
     <div class="carousel-inner">
       <% @lists.each do |list| %>
@@ -19,6 +21,7 @@
       </div>
       <% end %>
     </div>
+    
     <!-- スライドコントロールの設定 -->
     <button type="button" class="carousel-control-prev" data-bs-target="#carouselOption1" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -28,5 +31,6 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">次へ</span>
     </button>
+    
   </div>
 </div>
