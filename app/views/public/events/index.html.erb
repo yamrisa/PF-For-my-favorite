@@ -18,12 +18,12 @@
       <%= form_with(model: @event, local: true) do |form| %>
       
         <div class="title">
-          <%= form.label :title %>
-          <%= form.text_field :title, required: true, placeholder: "up to 10 characters" %>
+          <%= form.label "Memo" %>
+          <%= form.text_field :title, required: true, placeholder: "10文字まで" %>
         </div>
       
           <div class="time">
-          <%= form.label :start_time %>
+          <%= form.label "Date" %>
           <%= form.date_select :start_time %>
         </div>
       
