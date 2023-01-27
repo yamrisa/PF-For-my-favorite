@@ -1,14 +1,14 @@
 <div class="container text-center">
-  <div class="listbox">
     
     <div class="row">
       <h1>Output</h1>
     </div>
   
+  <div class="listbox">
     <div class="row">
       <div>
         <p>投稿:<%= safe_join(@output.post.split("\n"),tag(:br)) %></p>
-        <p>公開状態:<%= safe_join(@output.release.split("\n"),tag(:br)) %></p>
+        <p>公開状態:<%= @output.release %></p>
       </div>
       <p><%= link_to 'BACK', outputs_path, class:"link-info" %></p>
       <!--投稿したuserのみ表示-->

@@ -3,19 +3,16 @@ class Public::ListsController < ApplicationController
   before_action :prevent_url, only: [:show, :edit, :update, :destroy]
   
   
-  # 空のオブジェクト作成
   def new
     @list = List.new
   end
   
-  # 投稿データの保存
   def create
     @list = current_user.lists.new(list_params)
     @list.save
     redirect_to lists_path
   end
 
-  # ログイン中ユーザーのリスト一覧表示
   def index
     @lists = current_user.lists
   end

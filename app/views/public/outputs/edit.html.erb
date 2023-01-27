@@ -1,8 +1,7 @@
-<div class="listbox">
+<div class="row justify-content-center listbox">
   <h1>Output Edit</h1>
   <%= form_with model: @output do |f| %>
-    <h4>投稿文</h4>
-    <%= f.text_area :post %>
+    <p>投稿文</p><%= f.text_area :post %><br>
     <%= f.label :release, "表示状態" %><br>
     <%= f.select :release,[["公開", "release"],["非公開", "private"]], include_blank: "選択してください" %><br>
     <%= f.submit 'Update', class: "btns" %>

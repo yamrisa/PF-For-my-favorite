@@ -4,7 +4,7 @@
     <!-- インジケータの設定 -->
     <div class="carousel-indicators">
       <% @lists.each_with_index do |list, index| %>
-      <button type="button" data-bs-target="#carouselOption1" data-bs-slide-to="<%= index %>" class="<%= index == 0 ? 'active' : '' %>" aria-current="<%= index == 0 ? 'true' : '' %>" aria-label="スライド <%= index + 1 %>"></button>
+        <button type="button" data-bs-target="#carouselOption1" data-bs-slide-to="<%= index %>" class="<%= index == 0 ? 'active' : '' %>" aria-current="<%= index == 0 ? 'true' : '' %>" aria-label="スライド <%= index + 1 %>"></button>
       <% end %>
     </div>
     
@@ -12,13 +12,13 @@
     <div class="carousel-inner">
       <% @lists.each do |list| %>
         <div class="carousel-item active">
-        <%= image_tag list.get_image(400,300), class: "d-block w-100" %>
-        <div class="carousel-caption d-none d-md-block">
-          <%= link_to list_path(list.id) do %>
-          <h2><%= list.goal %></h2>
-          <% end %>
+          <%= image_tag list.get_image(400,300), class: "d-block w-100" %>
+            <div class="carousel-caption d-none d-md-block">
+              <%= link_to list_path(list.id) do %>
+                <h2><%= list.goal %></h2>
+              <% end %>
+          </div>
         </div>
-      </div>
       <% end %>
     </div>
     
@@ -27,6 +27,7 @@
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">前へ</span>
     </button>
+    
     <button type="button" class="carousel-control-next" data-bs-target="#carouselOption1" data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">次へ</span>
