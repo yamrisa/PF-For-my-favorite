@@ -6,7 +6,7 @@ class Public::OutputsController < ApplicationController
   def index
     @user = current_user
     @output = Output.new
-    @outputs = current_user.outputs.page(params[:page])
+    @outputs = current_user.outputs.order(id: "DESC").page(params[:page])
   end
   
   def create
