@@ -1,16 +1,15 @@
 Rails.application.routes.draw do
-  
-# 管理者側
-namespace :admin do
-  get 'home/top'
-  resources :outputs, only: [:destroy]
-end
 
 # 管理者用
 # URL /admin/sign_in ...
 devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
   sessions: "admin/sessions"
 }
+# 管理者側
+namespace :admin do
+  get 'home/top'
+  resources :outputs, only: [:destroy]
+end
 
 # ユーザー用
 # URL /customers/sign_in ...

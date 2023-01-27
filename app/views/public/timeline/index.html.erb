@@ -2,7 +2,7 @@
   
   <div class="row">
     <%= form_with(url: timeline_index_path(@outputs_post), remote: true, method: :get, class: "output-search-form search-form-003") do |form| %>
-      <%= form.text_field :keyword, placeholder: "Search", class: "search-input" %>
+      <%= form.text_field :keyword, placeholder: "favorite説明書 で検索!", class: "search-input" %>
       <%= form.button "", class: "search-btn" %> 
     <% end %>
   </div>
