@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ForMyFavorite</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
+  </head>
+
+  <body>
+    <div class="container-fluid text-center main-div">
+        <header class="sticky-top p-3">
+          <div class="openbtn"><span></span><span></span><span></span></div>
+          <nav id="g-nav">
+            <div id="g-nav-list">
+              <ul>
+                <!--ログインしてる場合表示-->
+                <% if user_signed_in? %>
+                  <% if current_user.name != "Guest player" %>
+                    <li>
+                      <%= link_to "My page", my_page_path, class:"link-info" %>
+                    </li>
+                  <% end %>
+                  <li>
+                    <%= link_to 'My calendar', events_path %>
+                  </li>
+                  <li>
+                    <%= link_to 'My List', lists_path, class:"link-info" %>
+                  </li>
+                  <li>
+                    <%= link_to '＋List', new_list_path %>
+                  </li>
+                  <li>
+                    <%= link_to 'My output', outputs_path, class:"link-info" %>
+                  </li>
+                  <li>
+                    <%=link_to"♡Favorite", bookmarks_path(@user) %>
+                  </li>
+                  <li>
+                    <%= link_to 'Timeline', timeline_index_path, class:"link-info" %>
+                  </li>
+                  <li>
+                    <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+                  </li>
+                <!--adminがログインしてる場合-->
+                <% elsif admin_signed_in? %>
+                  <li>
+                    <%= link_to "Log out", destroy_admin_session_path, method: :delete %>
+                  </li>
+                <!--ログインしてない場合表示-->
+                <% else %>
+                  <li>
+                    <%= link_to "Sign up", new_user_registration_path, class:"link-info" %>
+                  </li>
+                  <li>
+                    <%= link_to "Top", root_path %>
+                  </li>
+                  <li>
+                    <%= link_to "Log in", new_user_session_path, class:"link-info" %>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          </nav>
+        </header>
+      
+      <%= yield %>
+    </div>
+  </body>
+</html>
+
+<!--動かなくなるので修正必須-->
+<%
+=begin
+$(".openbtn").click(function () {//ボタンがクリックされたら
+	$(this).toggleClass('active');//ボタン自身に activeクラスを付与し
+    $("#g-nav").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
+});
+
+$("#g-nav a").click(function () {//ナビゲーションのリンクがクリックされたら
+    $(".openbtn").removeClass('active');//ボタンの activeクラスを除去し
+    $("#g-nav").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
+});
+
+<%
+=end %>
