@@ -2,7 +2,6 @@ class Public::ListsController < ApplicationController
   before_action :set_list, only: [:show, :edit, :update, :destroy]
   before_action :prevent_url, only: [:show, :edit, :update, :destroy]
   
-  
   def new
     @list = List.new
   end

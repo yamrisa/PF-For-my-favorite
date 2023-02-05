@@ -4,7 +4,6 @@ class List < ApplicationRecord
   #Active StrageとListテーブルのアソシエーション
   has_one_attached :image
   
-  # 必須入力のバリデーション
   validates :goal, :relation, :task, :routine, presence: true
   
   #画像がなかったらsamle.jpg表示
