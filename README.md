@@ -34,6 +34,8 @@ For my favoriteというアプリ名の通り「推しのため」なら頑張�
 ## 設計書
 
 ER図　https://drive.google.com/file/d/1gDuhycta1i_MFa95h7-TfifKddK-wPfz/view?usp=sharing
+AWS構成図　https://drive.google.com/file/d/1ULzMvuQAg6JTB0izAHzXpZ8ml5VnsNkQ/view?usp=sharing
+インフラ設計書　https://docs.google.com/spreadsheets/d/1M45M2Py3tLX-DffCyJQkTjZwrJXhjb45jSP2V1zHdNU/edit?usp=sharing
 
 ## 開発環境
 - OS：Linux(CentOS)
