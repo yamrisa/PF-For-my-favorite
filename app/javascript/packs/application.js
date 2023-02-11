@@ -6,7 +6,7 @@
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
-import "channels"
+import "channels";
 import "jquery";
 //import "bootstrap";
 import "../stylesheets/application";
@@ -17,11 +17,22 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-//require("jquery")  
+// require("jquery")  
 
-//window.$ = window.jQuery = require('jquery');
+// window.$ = window.jQuery = require('jquery');
 require('packs/raty')
+// global.$ = jquery;
 
+/* global $*/
+$(function() {
+$(".openbtn").click(function () {//ボタンがクリックされたら
+	$(this).toggleClass('active');//ボタン自身に activeクラスを付与し
+    $("#g-nav").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
+});
 
-
+$("#g-nav a").click(function () {//ナビゲーションのリンクがクリックされたら
+    $(".openbtn").removeClass('active');//ボタンの activeクラスを除去し
+    $("#g-nav").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
+});
+});
 
