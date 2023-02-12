@@ -9,7 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels";
 import "jquery";
 //import "bootstrap";
-import "../stylesheets/application";
+import "../stylesheets/application"
 
 import '@fortawesome/fontawesome-free/js/all'
 
@@ -23,14 +23,18 @@ require('packs/raty')
 
 /* global $*/
 $(function() {
-$(".openbtn").click(function () {//ボタンがクリックされたら
-	$(this).toggleClass('active');//ボタン自身に activeクラスを付与し
-    $("#g-nav").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
-});
+    $(".openbtn").click(function () {//ボタンがクリックされたら
+    	$(this).toggleClass('active');//ボタン自身に activeクラスを付与し
+        $("#g-nav").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
+        if ($("#g-nav").css("height") != '0px') {
+            $("#g-nav").css("height", "0")  
+        } else {
+            $("#g-nav").css("height", "100vh")
+        }
+    });
 
 $("#g-nav a").click(function () {//ナビゲーションのリンクがクリックされたら
     $(".openbtn").removeClass('active');//ボタンの activeクラスを除去し
     $("#g-nav").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
 });
 });
-
