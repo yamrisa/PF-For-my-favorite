@@ -14,7 +14,7 @@
         <div class="carousel-item active">
           <%= image_tag list.get_image(400,300), class: "d-block w-100" %>
             <div class="carousel-caption d-none d-md-block">
-              <%= link_to list_path(list.id) do %>
+              <%= link_to list_path(list.id), class:"link-light" do %>
                 <h2><%= list.goal %></h2>
               <% end %>
           </div>
