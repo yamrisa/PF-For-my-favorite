@@ -1,0 +1,28 @@
+<div class="container text-center mt-5">
+  <div class="row">
+    
+    <div class="col">
+      <div class="listbox">
+        <span class="box-title">Memo</span>
+        
+          <p><%= @event.title %></p>
+        
+      </div>
+      
+      <div class="listbox">
+        <span class="box-title">Date</span>  
+        <p><%= @event.start_time %></p>
+      </div>
+      
+     
+      
+      <div class="listbox-in">
+        <%= link_to 'BACK', events_path, class:"link-info" %>
+        <%= link_to 'EDIT', edit_event_path %>
+        <%= link_to 'DELETE', event_path, method: :delete, class:"link-info" %>
+      </div>
+    </div>
+    
+  </div>
+</div>
+

@@ -6,16 +6,22 @@
   
   <div class="listbox">
     <div class="row">
-      <div>
-        <p>投稿:<%= safe_join(@output.post.split("\n"),tag(:br)) %></p>
-        <p>公開状態:<%= @output.release %></p>
+      <div class="listbox-in">
+         <span class="box-title badge text-bg-secondary">投稿</span>
+        <p><%= safe_join(@output.post.split("\n"),tag(:br)) %></p>
       </div>
-      <p><%= link_to 'BACK', outputs_path, class:"link-info" %></p>
-      <!--投稿したuserのみ表示-->
-      <% if @output.user_id == current_user.id %>
-        <p><%= link_to 'EDIT', edit_output_path %></p>
-        <p><%= link_to 'DELETE', output_path, method: :delete, class:"link-info" %></p>
-      <% end %>
+      <div class="listbox-in">
+        <span class="box-title badge text-bg-secondary">公開状態</span>
+        <p><%= @output.release %></p>
+      </div>
+      <div class="listbox-in">
+        <%= link_to 'BACK', outputs_path, class:"link-info" %>
+        <!--投稿したuserのみ表示-->
+        <% if @output.user_id == current_user.id %>
+          <%= link_to 'EDIT', edit_output_path, class:"link-info" %>
+          <%= link_to 'DELETE', output_path, method: :delete, class:"link-info" %>
+        <% end %>
+      </div>
     </div>
     
   </div>

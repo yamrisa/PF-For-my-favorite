@@ -8,7 +8,7 @@
         <p>Email: <%= @user.email %></p>
         
         <% if @user.name != "Guest player" %>
-          <%= link_to 'EDIT', information_path %>
+          <%= link_to 'EDIT', information_path, class:"link-info" %>
         <% end %>
     </div>
   </div>

@@ -1,6 +1,6 @@
 <% if output.colectioned_by?(current_user) %>
     <p>
-      <%= link_to output_colection_path(output.id), method: :delete, remote: true do %>
+      <%= link_to output_colection_path(output.id), method: :delete, remote: true, class:"link-info" do %>
         <i class="fas fa-heart"></i>
       <% end %>
     </p>

@@ -1,0 +1,25 @@
+<div class="container-fluid text-center p-5">
+  <div class="col ">
+    <div class="listbox">
+      <h1>＋<i class="fas fa-pencil-alt"></i></h1>
+      <%= form_with(model: @event, local: true) do |form| %>
+  
+      <div class="title p-1">
+        <%= form.label "Memo" %>
+        <%= form.text_field :title, required: true, placeholder: "10文字まで" %>
+      </div>
+  
+      <div class="time p-1">
+        <%= form.label "Date" %>
+        <%= form.date_select :start_time %>
+      </div>
+    
+      <div class="p-1">
+        <%= form.submit 'UPDATE', class: 'btns' %>
+      </div>
+    
+    <% end %>
+    <%= link_to 'BACK', event_path, class:"link-info" %>
+    </div>
+  </div>
+</div>

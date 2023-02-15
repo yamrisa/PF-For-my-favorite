@@ -24,7 +24,7 @@
         <% @outputs.each do |output| %>
           <div class="col-auto">
             <div class="listbox-in">
-              <%= link_to output_path(output.id) do %>
+              <%= link_to output_path(output.id), class:"link-secondary" do %>
                 <P><%= safe_join(output.post.split("\n"),tag(:br)) %></P>
               <% end %>
             </div>
