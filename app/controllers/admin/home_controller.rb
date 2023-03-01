@@ -1,7 +1,9 @@
 class Admin::HomeController < ApplicationController
+  before_action :authenticate_admin!
   
   def top
-    @outputs = Output.where(release: 'release').order(id: "DESC").page(params[:page])
+    @admin = current_admin
+    @outputs = Output.order(id: "DESC").page(params[:page])
   end
   
 end
