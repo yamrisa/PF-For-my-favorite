@@ -1,4 +1,5 @@
 class Public::EventsController < ApplicationController
+  before_action :authenticate_user!
   def index
     @user = current_user
     @events = Event.where(user_id: current_user.id)
