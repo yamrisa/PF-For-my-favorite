@@ -8,7 +8,7 @@
       <div class="col-7">
         <div class="listbox">
             <p><%= output.post %></p>
-            <%= link_to 'Delete', admin_output_path(output.id), method: :delete, class:"link-info"  %>
+            <%= link_to 'Delete', admin_output_path(output.id), method: :delete, class:"link-info", data: {confirm: "削除しますか？"}  %>
         </div>
       </div>
     <% end %>

@@ -19,7 +19,7 @@
         <!--投稿したuserのみ表示-->
         <% if @output.user_id == current_user.id %>
           <%= link_to 'EDIT', edit_output_path, class:"link-info" %>
-          <%= link_to 'DELETE', output_path, method: :delete, class:"link-info" %>
+          <%= link_to 'DELETE', output_path, method: :delete, class:"link-info", data: {confirm: "削除しますか？"} %>
         <% end %>
       </div>
     </div>

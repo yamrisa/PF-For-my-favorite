@@ -10,7 +10,7 @@
       <div class="listbox-in">
         <%= link_to 'BACK', events_path, class:"link-info" %>
         <%= link_to 'EDIT', edit_event_path %>
-        <%= link_to 'DELETE', event_path, method: :delete, class:"link-info" %>
+        <%= link_to 'DELETE', event_path, method: :delete, class:"link-info", data: {confirm: "削除しますか？"} %>
       </div>
     </div>
     
